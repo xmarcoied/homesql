@@ -9,6 +9,10 @@ var (
 	UsersStore []User
 )
 
+func ConfigureMockedDB() database {
+	return mockedDatabase{}
+}
+
 func (m mockedDatabase) GetUsers(ctx context.Context) ([]User, error) {
 	return UsersStore, nil
 }
